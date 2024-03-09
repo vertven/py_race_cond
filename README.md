@@ -17,3 +17,14 @@ docker-compose up
 chmod +x race.sh
 ./race.sh
 ```
+
+## Local Development
+
+```bash
+# Enter the virtual environment and install the dependencies
+poetry shell
+poetry install
+
+# Run the app
+python -m py_race_cond
+```
