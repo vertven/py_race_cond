@@ -25,7 +25,7 @@ def read():
         lock.value += 1
 
     try:
-        with open("data.txt", "r") as file:
+        with open("data.json", "r") as file:
             data = file.read()
 
             # Release the lock
@@ -59,7 +59,7 @@ def write():
                     continue
 
                 try:
-                    with open("data.txt", "w") as file:
+                    with open("data.json", "w") as file:
                         file.write(json.dumps(data))
                     return "OK", 200
                 except Exception as e:

@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -e
+
 # Set the counter to 0
 counter=0
-echo "{"data": "0"}" > data.txt
+echo "{"data": "0"}" > data.json
 
 # Function to send POST request
 send_post_request() {
