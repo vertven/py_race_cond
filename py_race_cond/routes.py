@@ -6,7 +6,7 @@ from flask import Blueprint, current_app, request
 app_blueprint = Blueprint("app", __name__)
 
 
-def timeout_handler():
+def timeout_handler(signum, frame):
     raise TimeoutError("Operation timed out")
 
 
