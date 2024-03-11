@@ -1,17 +1,15 @@
-from multiprocessing import Value
+from multiprocessing import Lock, Manager
 
 from flask import Flask
 from gunicorn.app.base import BaseApplication
 
 from .routes import app_blueprint
 
-lock = Value("i", 0)
-
-
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(app_blueprint)
-    app.config["lock"] = lock
+    app.config["lock"] = Lock()
+    app.config["data"] = Manager().dict()
     return app
 
 
